@@ -1,6 +1,6 @@
 package org.asifanam.catalogservice.catalog.web.domain;
 
-public class ProductNotFoundException extends  RuntimeException{
+public class ProductNotFoundException extends RuntimeException {
     public ProductNotFoundException(String message) {
         super(message);
     }

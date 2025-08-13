@@ -1,4 +1,5 @@
 package org.asifanam.catalogservice;
+
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +13,7 @@ public abstract class AbstractIT {
     int port;
 
     @BeforeEach
-    void  setUp() {
+    void setUp() {
         RestAssured.port = port;
     }
 }

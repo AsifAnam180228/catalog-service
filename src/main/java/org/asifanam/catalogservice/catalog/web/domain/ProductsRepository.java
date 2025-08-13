@@ -1,9 +1,8 @@
 package org.asifanam.catalogservice.catalog.web.domain;
 
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
 interface ProductsRepository extends JpaRepository<ProductsEntity, Long> {
-    Optional<ProductsEntity>findByCode(String code);
+    Optional<ProductsEntity> findByCode(String code);
 }

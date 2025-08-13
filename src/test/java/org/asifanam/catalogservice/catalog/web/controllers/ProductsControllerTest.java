@@ -1,16 +1,14 @@
 package org.asifanam.catalogservice.catalog.web.controllers;
 
-import io.restassured.http.ContentType;
-import java.math.BigDecimal;
-
-import org.asifanam.catalogservice.AbstractIT;
-import org.junit.jupiter.api.Test;
-import org.springframework.test.context.jdbc.Sql;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
+
+import io.restassured.http.ContentType;
+import org.asifanam.catalogservice.AbstractIT;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.jdbc.Sql;
 
 @Sql("/test-data.sql")
 public class ProductsControllerTest extends AbstractIT {

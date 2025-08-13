@@ -3,14 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>org.asifanam</groupId>
+		<artifactId>spring-boot-microservices-course</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>org.asifanam</groupId>
 	<artifactId>catalog-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>catalog-service</name>
 	<description>catalog-service</description>
 	<url/>
@@ -29,6 +27,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
+		<dockerImageName>asifanam/bookstore-${project.artifactId}</dockerImageName>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -186,6 +185,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>${dockerImageName}</name>
+						<env>
+							<BP_JVM_VERSION>21</BP_JVM_VERSION>
+						</env>
+					</image>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
